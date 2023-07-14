@@ -126,7 +126,6 @@ menulist = '''
     *******************************************
 '''
 
-## fix this shit
 while True:
     print('MAIN MENU')
     print(menulist)
