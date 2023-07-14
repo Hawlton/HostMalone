@@ -1,16 +1,10 @@
 import os
 import subprocess
 from pathlib import Path
-from progress.bar import Bar
 ## Expand this list
 main_programs = '''tilix vim htop nvtop iftop code telegram-desktop chromium steam-native dolphin-emu pcsx2 wireshark-qt \
 aircrack-ng nmap neofetch yay
 '''
-def progress_bar(progress, total):
-    percent = 100 * (progress / float(total))
-    bar = '|' * int(percent) + '-' * (100 - int(percent))
-    print(f'\r|{bar}| {percent:.2f}%', end='\r')
-
 
 print('optimize mirrorlist?')
 print('[y/n]')
