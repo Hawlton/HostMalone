@@ -1,9 +1,9 @@
-import os
+import os, socket
 from text_border import TextBorder
 
 tb = TextBorder()
 
-main_packages = "vim tilix htop nvtop code telegram-desktop nmap neofetch dolphin-emu pcsx2"
+main_packages = "vim tilix htop nvtop code telegram-desktop nmap neofetch dolphin-emu"
 flatpaks = "steam"
 
 aliases = '''\
@@ -78,9 +78,9 @@ def configure_dns():
 
 def configure_zshrc():
     print('editing zshrc')
-    with open(f'/home/{user}/.zshrc', 'a+') as zshconf:
+    with open(f'/home/modeseven/.zshrc', 'a+') as zshconf:
         zshconf.write(aliases)
-        if hostname == 'modeseven-flexbox':
+        if socket.gethostname() == 'modeseven-flexbox':
             zshconf.seek(0)
             zshconf.write('neofetch\n')
 
